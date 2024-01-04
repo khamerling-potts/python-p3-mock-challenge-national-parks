@@ -31,7 +31,7 @@ class NationalPark:
 
     def best_visitor(self):
         visitors = [trip.visitor for trip in self.trips()]
-        return max(visitors, key=visitors.count)
+        return max(set(visitors), key=visitors.count)
         # for trip in self.trips():
         #     if trip.visitor in visitors:
         #         visitors[trip.visitor] += 1
