@@ -42,6 +42,11 @@ class NationalPark:
         # # for each visitor, find the value of visitors[visitor] and use max of that
         # # visitor => visitors.get(visitor)
 
+    @classmethod
+    def most_visited(cls):
+        counts = {park: park.total_visits() for park in cls.all}
+        return max(counts, key=counts.get)
+
 
 class Trip:
     all = []
